@@ -2,15 +2,9 @@ from django.shortcuts import render
 from app.models import UpcomingProjects, Testimonial, Project
 from django.http import JsonResponse
 
-# Create your views here.
 from django.shortcuts import render
 from django.http import HttpResponse
-from .forms import QuoteForm
-from .models import UpcomingProjects, Testimonial, Project
-
-from django.shortcuts import render
-from django.http import HttpResponse
-from .models import UpcomingProjects, Testimonial, Project, Quote
+from .models import UpcomingProjects, Testimonial, Project, Quote, Enquiry
 
 
 def index(request):
@@ -48,8 +42,28 @@ def about(request):
 
 
 def projects(request):
-    return render(request, 'index.html')
+    all_projects = Project.objects.all()
+    context = {
+        'projects': all_projects
+    }
+    return render(request, 'projects.html', context)
 
 
 def contact(request):
-    return render(request, 'index.html')
+    if request.method == 'POST':
+        # Manually retrieve form data
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+
+        # Simple validation
+        if name and email and subject and message:
+            Enquiry.objects.create(name=name, email=email, subject=subject, message=message)
+            return JsonResponse(
+                {'status': 'success', 'message': 'Your request has been registered successfully. Thank you!'})
+        else:
+            # Respond with an error if any fields are missing
+            return JsonResponse({'status': 'error', 'message': 'Please fill all the fields.'}, status=400)
+
+    return render(request, 'contact.html')

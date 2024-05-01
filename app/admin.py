@@ -1,5 +1,5 @@
 from django.contrib import admin
-from app.models import Project, UpcomingProjects, Testimonial, Quote
+from app.models import Project, UpcomingProjects, Testimonial, Quote, Enquiry
 
 
 @admin.register(Project)
@@ -23,3 +23,4 @@ class ProjectAdmin(admin.ModelAdmin):
 
 admin.site.register(Testimonial)
 admin.site.register(Quote)
+admin.site.register(Enquiry)

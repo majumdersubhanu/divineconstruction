@@ -53,3 +53,19 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return f'{self.name} - {self.testimony}'
+
+
+class Enquiry(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=100)
+    message = models.TextField()
+
+    def __str__(self):
+        return f'{self.name} - {self.email}'
+
+    class Meta:
+        ordering = ['name']
+        verbose_name = 'Enquiry'
+        verbose_name_plural = 'Enquiries'
+        unique_together = (('name', 'email'),)
