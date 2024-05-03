@@ -355,47 +355,31 @@
 
                 <div class="slides-2 swiper">
                     <div class="swiper-wrapper">
-                        {% if testimonials %}
-                            {% for testimonial in testimonials %}
-                                <div class="swiper-slide">
-                                    <div class="testimonial-wrap">
-                                        <div class="testimonial-item">
-                                            <h3>{{ testimonial.name }}</h3>
-                                            <h4>{{ testimonial.occupation }}</h4>
-                                            {% if testimonial.rating == 5 %}
+                        {% for testimonial in testimonials %}
+                            <div class="swiper-slide">
+                                <div class="testimonial-wrap">
+                                    <div class="testimonial-item">
+                                        <h3>{{ testimonial.name }}</h3>
+                                        <h4>{{ testimonial.occupation }}</h4>
+                                        <div class="stars">
+                                            {% for i in 5|range:testimonial.rating %}
                                                 <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                            {% elif testimonial.rating == 4 %}
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                            {% elif testimonial.rating == 3 %}
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                            {% elif testimonial.rating == 2 %}
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                            {% else %}
-                                                <i class="bi bi-star-fill"></i>
-                                            {% endif %}
-                                            <p>
-                                                <i class="bi bi-quote quote-icon-left"></i>
-                                                {{ testimonial.testimony }}
-                                                <i class="bi bi-quote quote-icon-right"></i>
-                                            </p>
+                                            {% endfor %}
+                                            {% for i in testimonial.rating|range:5 %}
+                                                <i class="bi bi-star"></i>
+                                            {% endfor %}
                                         </div>
+                                        <p>
+                                            <i class="bi bi-quote quote-icon-left"></i>
+                                            {{ testimonial.testimony }}
+                                            <i class="bi bi-quote quote-icon-right"></i>
+                                        </p>
                                     </div>
                                 </div>
-                            {% empty %}
-                                <p>No testimonials available.</p>
-                            {% endfor %}
-
-                        {% endif %}
+                            </div>
+                        {% empty %}
+                            <p>No testimonials available.</p>
+                        {% endfor %}
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
