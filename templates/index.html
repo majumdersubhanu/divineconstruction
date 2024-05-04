@@ -362,12 +362,37 @@
                                         <h3>{{ testimonial.name }}</h3>
                                         <h4>{{ testimonial.occupation }}</h4>
                                         <div class="stars">
-                                            {% for i in 5|range:testimonial.rating %}
+                                            {% if testimonial.rating == 1 %}
                                                 <i class="bi bi-star-fill"></i>
-                                            {% endfor %}
-                                            {% for i in testimonial.rating|range:5 %}
                                                 <i class="bi bi-star"></i>
-                                            {% endfor %}
+                                                <i class="bi bi-star"></i>
+                                                <i class="bi bi-star"></i>
+                                                <i class="bi bi-star"></i>
+                                            {% elif testimonial.rating == 2 %}
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star"></i>
+                                                <i class="bi bi-star"></i>
+                                                <i class="bi bi-star"></i>
+                                            {% elif testimonial.rating == 3 %}
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star"></i>
+                                                <i class="bi bi-star"></i>
+                                            {% elif testimonial.rating == 4 %}
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star"></i>
+                                            {% else %}
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            {% endif %}
                                         </div>
                                         <p>
                                             <i class="bi bi-quote quote-icon-left"></i>
@@ -391,11 +416,7 @@
     </main>
     <!-- End #main -->
 
-    <a
-            href="#"
-            class="scroll-top d-flex align-items-center justify-content-center"
-    ><i class="bi bi-arrow-up-short"></i
-    ></a>
+    
 
     <div id="preloader"></div>
 
