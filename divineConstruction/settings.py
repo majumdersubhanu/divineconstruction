@@ -131,7 +131,7 @@ MEDIA_URL = '/media/'
 UNFOLD = {
     "SITE_TITLE": 'Divine Construction Admin',
     "SITE_HEADER": None,
-    "SITE_URL": "/home/",
+    "SITE_URL": "/",
     # "SITE_ICON": lambda request: static("icon.svg"),  # both modes, optimise for 32px height
     "SITE_ICON": {
         "light": lambda request: static("img/logo.png"),  # light mode
