@@ -1,9 +1,6 @@
-from django.shortcuts import render
-from app.models import UpcomingProjects, Testimonial, Project
 from django.http import JsonResponse
-
 from django.shortcuts import render
-from django.http import HttpResponse
+
 from .models import UpcomingProjects, Testimonial, Project, Quote, Enquiry
 
 
@@ -67,3 +64,11 @@ def contact(request):
             return JsonResponse({'status': 'error', 'message': 'Please fill all the fields.'}, status=400)
 
     return render(request, 'contact.html')
+
+
+def project_detail(request, project_id):
+    project = Project.objects.all().filter(id=project_id)
+    context = {
+        'project': project
+    }
+    return render(request, 'project-details.html', context)
