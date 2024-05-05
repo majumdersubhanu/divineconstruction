@@ -65,7 +65,9 @@
                        class={% if request.path == '/contact/' %}active{% endif %}>Contact</a></li>
 
                 <li>
-                    <button type="button" class="btn btn-warning">Become A Partner</button>
+                    <a href="{% url 'divineConstruction:contact' %}">
+                        <button type="button" class="btn btn-warning">Become A Partner</button>
+                    </a>
 
                 </li>
 
