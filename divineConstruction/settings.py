@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_)53d!lgxa)=qd9h&6=-n8+mv84rih%a%4yl&4ehiz+tv*h^ix'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['divine1234.pythonanywhere.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -131,7 +131,7 @@ MEDIA_URL = '/media/'
 UNFOLD = {
     "SITE_TITLE": 'Divine Construction Admin',
     "SITE_HEADER": None,
-    "SITE_URL": "/home/",
+    "SITE_URL": "/",
     # "SITE_ICON": lambda request: static("icon.svg"),  # both modes, optimise for 32px height
     "SITE_ICON": {
         "light": lambda request: static("img/logo.png"),  # light mode

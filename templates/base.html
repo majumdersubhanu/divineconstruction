@@ -56,7 +56,7 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a href="{% url 'divineConstruction:index' %}"
-                       class={% if request.path == '/home/' %}active{% endif %}>Home</a></li>
+                       class={% if request.path == '/' %}active{% endif %}>Home</a></li>
                 <li><a href="{% url 'divineConstruction:about' %}"
                        class={% if request.path == '/about/' %}active{% endif %}>About</a></li>
                 <li><a href="{% url 'divineConstruction:projects' %}"

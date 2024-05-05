@@ -24,7 +24,6 @@
         </div><!-- End Breadcrumbs -->
 
         <!-- ======= Our Projects Section ======= -->
-        <!-- ======= Our Projects Section ======= -->
         <section id="projects" class="projects">
             <div class="container" data-aos="fade-up">
 
@@ -38,11 +37,11 @@
                                     <img src="{{ project.image.url }}" class="img-fluid" alt="{{ project.name }}">
                                     <div class="portfolio-info">
                                         <h4>{{ project.name }}</h4>
-                                        <p>{{ project.description }}</p>
+                                        <p>{{ project.description|slice:150 }}</p>
                                         <a href="{{ project.image.url }}" title="{{ project.name }}"
                                            data-gallery="portfolio-gallery-{{ project.type|lower }}"
                                            class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                        <a href="{% url 'divineConstruction:project_detail project_id=project.id' %}" title="More Details" class="details-link"><i
+                                        <a href="{% url 'divineConstruction:project_detail' project_id=project.id %}" title="More Details" class="details-link"><i
                                                 class="bi bi-link-45deg"></i></a>
                                     </div>
                                 </div>

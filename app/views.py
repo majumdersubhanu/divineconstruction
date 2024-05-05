@@ -67,8 +67,9 @@ def contact(request):
 
 
 def project_detail(request, project_id):
-    project = Project.objects.all().filter(id=project_id)
+    project = Project.objects.all().filter(id=project_id).first()
     context = {
         'project': project
     }
+
     return render(request, 'project-details.html', context)

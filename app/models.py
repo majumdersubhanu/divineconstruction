@@ -17,7 +17,7 @@ class Quote(models.Model):
 
 class UpcomingProjects(models.Model):
     name = models.CharField(max_length=100)
-    description = models.TextField(max_length=255)
+    description = models.TextField()
     image = models.ImageField(upload_to='upcoming_projects/')
 
     def image_tag(self):
@@ -31,7 +31,7 @@ class UpcomingProjects(models.Model):
 
 class Project(models.Model):
     name = models.CharField(max_length=100)
-    description = models.TextField(max_length=255)
+    description = models.TextField()
     image = models.ImageField(upload_to='projects/')
     location = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
