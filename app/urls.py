@@ -10,7 +10,7 @@ urlpatterns = [
                   path('about/', views.about, name='about'),
                   path('projects/', views.projects, name='projects'),
                   path('contact/', views.contact, name='contact'),
-                  path('projects/<int:project_id>/', views.project_detail, name='project_detail'),
+                  path('project/<int:project_id>/', views.project_detail, name='project_detail'),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
