@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-_)53d!lgxa)=qd9h&6=-n8+mv84rih%a%4yl&4ehiz+tv*h^ix
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.thedivineconstruction.in']
+ALLOWED_HOSTS = ['www.thedivineconstruction.in', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -146,6 +146,6 @@ UNFOLD = {
     "SHOW_HISTORY": True,  # show/hide "History" button, default: True
     "SHOW_VIEW_ON_SITE": True,  # show/hide "View on site" button, default: True
     "LOGIN": {
-        "image": lambda request: static('img/constructions-1.jpg'),
+        "image": lambda request: static('img/constructions-3.jpg'),
     },
 }
