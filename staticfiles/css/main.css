@@ -259,6 +259,19 @@ section {
   margin-right: 6px;
 }
 
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin: 0 auto; /* Center horizontally */
+}
+
 .header .logo h1 {
   font-size: 24px;
   font-weight: 700;
