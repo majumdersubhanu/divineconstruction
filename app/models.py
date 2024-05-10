@@ -46,14 +46,14 @@ class Project(models.Model):
 
 
 class Testimonial(models.Model):
-    name = models.CharField(max_length=100, blank=True, null=True)
-    occupation = models.CharField(max_length=100, blank=True, null=True)
-    testimony = models.TextField(blank=True, null=True)
-    rating = models.IntegerField(default=0, blank=True, null=True)
+    # name = models.CharField(max_length=100, blank=True, null=True)
+    # occupation = models.CharField(max_length=100, blank=True, null=True)
+    # testimony = models.TextField(blank=True, null=True)
+    # rating = models.IntegerField(default=0, blank=True, null=True)
     image = models.ImageField(upload_to='testimonials/', null=True, blank=True)
 
-    def __str__(self):
-        return f'{self.name} - {self.testimony}'
+    # def __str__(self):
+    #     return f'{self.name} - {self.testimony}'
 
 
 class Enquiry(models.Model):

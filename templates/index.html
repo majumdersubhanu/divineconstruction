@@ -352,61 +352,96 @@
                         Take a look at what our clients say about us.
                     </p>
                 </div>
+                {##}
+                {#                                <div class="slides-2 swiper">#}
+                {#                                    <div class="swiper-wrapper">#}
+                {#                                        {% for testimonial in testimonials %}#}
+                {#                                            {% if testimonial.name %}#}
+                {#                                                <div class="swiper-slide">#}
+                {#                                                    <div class="testimonial-wrap">#}
+                {#                                                        <div class="testimonial-item">#}
+                {#                                                            <h3>{{ testimonial.name }}</h3>#}
+                {#                                                            <h4>{{ testimonial.occupation }}</h4>#}
+                {#                                                            <div class="stars">#}
+                {#                                                                {% if testimonial.rating == 1 %}#}
+                {#                                                                    <i class="bi bi-star-fill"></i>#}
+                {#                                                                    <i class="bi bi-star"></i>#}
+                {#                                                                    <i class="bi bi-star"></i>#}
+                {#                                                                    <i class="bi bi-star"></i>#}
+                {#                                                                    <i class="bi bi-star"></i>#}
+                {#                                                                {% elif testimonial.rating == 2 %}#}
+                {#                                                                    <i class="bi bi-star-fill"></i>#}
+                {#                                                                    <i class="bi bi-star-fill"></i>#}
+                {#                                                                    <i class="bi bi-star"></i>#}
+                {#                                                                    <i class="bi bi-star"></i>#}
+                {#                                                                    <i class="bi bi-star"></i>#}
+                {#                                                                {% elif testimonial.rating == 3 %}#}
+                {#                                                                    <i class="bi bi-star-fill"></i>#}
+                {#                                                                    <i class="bi bi-star-fill"></i>#}
+                {#                                                                    <i class="bi bi-star-fill"></i>#}
+                {#                                                                    <i class="bi bi-star"></i>#}
+                {#                                                                    <i class="bi bi-star"></i>#}
+                {#                                                                {% elif testimonial.rating == 4 %}#}
+                {#                                                                    <i class="bi bi-star-fill"></i>#}
+                {#                                                                    <i class="bi bi-star-fill"></i>#}
+                {#                                                                    <i class="bi bi-star-fill"></i>#}
+                {#                                                                    <i class="bi bi-star-fill"></i>#}
+                {#                                                                    <i class="bi bi-star"></i>#}
+                {#                                                                {% else %}#}
+                {#                                                                    <i class="bi bi-star-fill"></i>#}
+                {#                                                                    <i class="bi bi-star-fill"></i>#}
+                {#                                                                    <i class="bi bi-star-fill"></i>#}
+                {#                                                                    <i class="bi bi-star-fill"></i>#}
+                {#                                                                    <i class="bi bi-star-fill"></i>#}
+                {#                                                                {% endif %}#}
+                {#                                                            </div>#}
+                {#                                                            <p>#}
+                {#                                                                <i class="bi bi-quote quote-icon-left"></i>#}
+                {#                                                                {{ testimonial.testimony }}#}
+                {#                                                                <i class="bi bi-quote quote-icon-right"></i>#}
+                {#                                                            </p>#}
+                {#                                                        </div>#}
+                {#                                                    </div>#}
+                {#                                                </div>#}
+                {#                                            {% else %}#}
+                {#                                                <div class="card-bg"#}
+                {#                                                     style="background-image: url({{ testimonial.image.url }});"></div>#}
+                {#                                            {% endif %}#}
+                {#                                        {% empty %}#}
+                {#                                            <p>No testimonials available.</p>#}
+                {#                                        {% endfor %}#}
+                {#                                    </div>#}
+                {#                                    <div class="swiper-pagination"></div>#}
+                {#                                </div>#}
+                {##}
+
+                {#                <div class="slides-2 swiper">#}
+                {#                    <div class="swiper-wrapper">#}
+                {#                        {% for testimonial in testimonials %}#}
+                {#                            {% if not testimonial.name %}#}
+                {#                                <div class="swiper-slide">#}
+                {#                                    <div class="card-bg"#}
+                {#                                         style="background-image: url({{ testimonial.image.url }});"></div>#}
+                {#                                </div>#}
+                {#                            {% endif %}#}
+                {#                        {% empty %}#}
+                {#                            <p>No testimonials available.</p>#}
+                {#                        {% endfor %}#}
+                {#                    </div>#}
+                {#                    <div class="swiper-pagination"></div>#}
+                {#                </div>#}
+
 
                 <div class="slides-2 swiper">
                     <div class="swiper-wrapper">
                         {% for testimonial in testimonials %}
-                            {% if testimonial.name %}
-                                <div class="swiper-slide">
-                                    <div class="testimonial-wrap">
-                                        <div class="testimonial-item">
-                                            <h3>{{ testimonial.name }}</h3>
-                                            <h4>{{ testimonial.occupation }}</h4>
-                                            <div class="stars">
-                                                {% if testimonial.rating == 1 %}
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star"></i>
-                                                    <i class="bi bi-star"></i>
-                                                    <i class="bi bi-star"></i>
-                                                    <i class="bi bi-star"></i>
-                                                {% elif testimonial.rating == 2 %}
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star"></i>
-                                                    <i class="bi bi-star"></i>
-                                                    <i class="bi bi-star"></i>
-                                                {% elif testimonial.rating == 3 %}
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star"></i>
-                                                    <i class="bi bi-star"></i>
-                                                {% elif testimonial.rating == 4 %}
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star"></i>
-                                                {% else %}
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                {% endif %}
-                                            </div>
-                                            <p>
-                                                <i class="bi bi-quote quote-icon-left"></i>
-                                                {{ testimonial.testimony }}
-                                                <i class="bi bi-quote quote-icon-right"></i>
-                                            </p>
-                                        </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial-wrap">
+                                    <div class="testimonial-item" style="background-image: url({{ testimonial.image.url }}); background-repeat: no-repeat">
+
                                     </div>
                                 </div>
-                            {% else %}
-                                <div class="card-bg"
-                                     style="background-image: url({{ testimonial.image.url }});"></div>
-                            {% endif %}
+                            </div>
                         {% empty %}
                             <p>No testimonials available.</p>
                         {% endfor %}
