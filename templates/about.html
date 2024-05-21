@@ -182,45 +182,22 @@
                 </div>
 
                 <div class="row gy-5">
-
-                    <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+                    {% for team_member in team_members %}
+                    	<div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
                         <div class="member-img">
-                            <img src="{% static 'img/team/team-1.jpg' %}" class="img-fluid" alt="">
+                            <img src="{{ team_member.image.url }}" class="img-fluid" alt="">
 
                         </div>
                         <div class="member-info text-center">
-                            <h4>John Doe</h4>
-                            <span>Position 1</span>
-                            <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum
-                                distinctio dire flow</p>
+                            <h4>{{ team_member.name}}</h4>
+                            <span>{{ team_member.position }}</span>
+                            <p>{{ team_member.bio }}</p>
                         </div>
-                    </div><!-- End Team Member -->
+                    </div>
+                    {% empty %}
+                    	<p>No team members found</p>
+                    {% endfor %}
 
-                    <div class="col-lg-4 col-md-2 member" data-aos="fade-up" data-aos-delay="200">
-                        <div class="member-img">
-                            <img src="{% static 'img/team/team-2.jpg' %}" class="img-fluid" alt="">
-
-                        </div>
-                        <div class="member-info text-center">
-                            <h4>Jane Doe</h4>
-                            <span>Position 2</span>
-                            <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod dolores
-                                exercitationem ut</p>
-                        </div>
-                    </div><!-- End Team Member -->
-
-                    <div class="col-lg-4 col-md-2 member" data-aos="fade-up" data-aos-delay="200">
-                        <div class="member-img">
-                            <img src="{% static 'img/team/team-3.jpg' %}" class="img-fluid" alt="">
-
-                        </div>
-                        <div class="member-info text-center">
-                            <h4>Jason Doe</h4>
-                            <span>Position 3</span>
-                            <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod dolores
-                                exercitationem ut</p>
-                        </div>
-                    </div><!-- End Team Member -->
                 </div>
 
             </div>

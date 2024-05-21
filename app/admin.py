@@ -1,5 +1,6 @@
 from django.contrib import admin
-from app.models import Project, UpcomingProjects, Testimonial, Quote, Enquiry
+
+from app.models import Project, UpcomingProjects, Testimonial, Quote, Enquiry, TeamMember
 
 
 @admin.register(Project)
@@ -14,7 +15,7 @@ class ProjectAdmin(admin.ModelAdmin):
 
 @admin.register(UpcomingProjects)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description' , 'image_tag')
+    list_display = ('name', 'description', 'image_tag')
     # fields = ('name', 'description', 'image_tag')
     # readonly_fields = ('image_tag',)
     search_fields = ('name', 'description')
@@ -24,3 +25,10 @@ class ProjectAdmin(admin.ModelAdmin):
 admin.site.register(Testimonial)
 admin.site.register(Quote)
 admin.site.register(Enquiry)
+
+
+@admin.register(TeamMember)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ('name', 'position', 'image_tag')
+    search_fields = ('name', 'bio')
+    ordering = ('name',)

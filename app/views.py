@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 
-from .models import UpcomingProjects, Testimonial, Project, Quote, Enquiry
+from .models import UpcomingProjects, Testimonial, Project, Quote, Enquiry, TeamMember
 
 
 def index(request):
@@ -35,7 +35,8 @@ def index(request):
 
 
 def about(request):
-    return render(request, 'about.html')
+    team_members = TeamMember.objects.all()
+    return render(request, 'about.html', context={'team_members': team_members})
 
 
 def projects(request):

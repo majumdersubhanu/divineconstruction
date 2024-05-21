@@ -1,5 +1,3 @@
-from email.mime import image
-
 from django.db import models
 from django.utils.html import mark_safe
 
@@ -70,3 +68,18 @@ class Enquiry(models.Model):
         verbose_name = 'Enquiry'
         verbose_name_plural = 'Enquiries'
         unique_together = (('name', 'email'),)
+
+
+class TeamMember(models.Model):
+    name = models.CharField(max_length=100)
+    position = models.CharField(max_length=100)
+    bio = models.TextField()
+    image = models.ImageField(upload_to='team_members/')
+
+    def image_tag(self):
+        return mark_safe('<img src="%s" width="150" height="150">' % self.image.url)
+
+    image_tag.short_description = 'Image'
+
+    def __str__(self):
+        return f'{self.name} - {self.position}'
