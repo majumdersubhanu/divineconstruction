@@ -74,3 +74,12 @@ def project_detail(request, project_id):
     }
 
     return render(request, 'project-details.html', context)
+
+
+def upcoming_project_detail(request, project_id):
+    project = UpcomingProjects.objects.all().filter(id=project_id).first()
+    context = {
+        'project': project
+    }
+
+    return render(request, 'project-details.html', context)

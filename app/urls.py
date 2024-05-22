@@ -11,6 +11,7 @@ urlpatterns = [
                   path('projects/', views.projects, name='projects'),
                   path('contact/', views.contact, name='contact'),
                   path('project/<int:project_id>/', views.project_detail, name='project_detail'),
+                  path('upcoming_project/<int:project_id>/', views.upcoming_project_detail, name='upcoming_project_detail'),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
