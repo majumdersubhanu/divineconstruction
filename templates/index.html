@@ -174,44 +174,18 @@
                     <p>Take a look at Devine Construction's upcoming projects.</p>
                 </div>
 
-{#                <div class="row gy-4" id="upcoming_projects">#}
-{#                    {% for project in upcoming_projects %}#}
-{#                        <div class="col-lg-6" data-aos="fade-up">#}
-{#                            <div class="card-item">#}
-{#                                <div class="row">#}
-{#                                    <div class="col-xl-5">#}
-{#                                        <!-- Using Django's get_media_prefix to handle media URL correctly -->#}
-{#                                        <div class="card-bg"#}
-{#                                             style="background-image: url({{ project.image.url }});"></div>#}
-{#                                    </div>#}
-{#                                    <div class="col-xl-7 d-flex align-items-center">#}
-{#                                        <div class="card-body">#}
-{#                                            <h4 class="card-title">{{ project.name }}</h4>#}
-{#                                            <p>{{ project.description|slice:150 }}</p>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        #}
-{#                        {% empty %}#}
-{#                            <p>No upcoming projects found</p>#}
-{#                        #}
-{#                    {% endfor %}#}
-{#                </div>#}
-
-
                 <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
                      data-portfolio-sort="original-order">
                     <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
                         {% for project in upcoming_projects %}
                             <div class="col-lg-4 col-md-6 portfolio-item filter-{{ project.name|lower }}">
                                 <div class="portfolio-content h-100">
-                                    <img src="{{ project.image.url }}" class="img-fluid" alt="{{ project.name }}">
+                                    <img src="{{ project.image.all.first.image.url }}" class="img-fluid"
+                                         alt="{{ project.name }}">
                                     <div class="portfolio-info">
                                         <h4>{{ project.name }}</h4>
                                         <p>{{ project.description|slice:150 }}</p>
-                                        <a href="{{ project.image.url }}" title="{{ project.name }}"
+                                        <a href="{{ project.image.all.first.image.url }}" title="{{ project.name }}"
                                            data-gallery="portfolio-gallery-{{ project.type|lower }}"
                                            class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                         <a href="{% url 'divineConstruction:upcoming_project_detail' project_id=project.id %}"
@@ -350,11 +324,11 @@
                         {% for project in recent_projects %}
                             <div class="col-lg-4 col-md-6 portfolio-item filter-{{ project.type|lower }}">
                                 <div class="portfolio-content h-100">
-                                    <img src="{{ project.image.url }}" class="img-fluid" alt="{{ project.name }}">
+                                    <img src="{{ project.image.all.first.image.url }}" class="img-fluid" alt="{{ project.name }}">
                                     <div class="portfolio-info">
                                         <h4>{{ project.name }}</h4>
                                         <p>{{ project.description|slice:150 }}</p>
-                                        <a href="{{ project.image.url }}" title="{{ project.name }}"
+                                        <a href="{{ project.image.all.first.image.url }}" title="{{ project.name }}"
                                            data-gallery="portfolio-gallery-{{ project.type|lower }}"
                                            class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                         <a href="{% url 'divineConstruction:project_detail' project_id=project.id %}"
@@ -467,7 +441,8 @@
                         {% for testimonial in testimonials %}
                             <div class="swiper-slide">
                                 <div class="testimonial-wrap">
-                                    <div class="testimonial-item" style="background-image: url({{ testimonial.image.url }}); background-repeat: no-repeat">
+                                    <div class="testimonial-item"
+                                         style="background-image: url({{ testimonial.image.url }}); background-repeat: no-repeat">
 
                                     </div>
                                 </div>

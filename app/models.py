@@ -16,12 +16,12 @@ class Quote(models.Model):
 class UpcomingProjects(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(upload_to='upcoming_projects/')
+    image = models.ManyToManyField('AppImage')
 
-    def image_tag(self):
-        return mark_safe('<img src="%s" width="150" height="150">' % self.image.url)
-
-    image_tag.short_description = 'Image'
+    # def image_tag(self):
+    #     return mark_safe('<img src="%s" width="150" height="150">' % self.image.all().first().url)
+    #
+    # image_tag.short_description = 'Image'
 
     def __str__(self):
         return self.name
@@ -30,14 +30,14 @@ class UpcomingProjects(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(upload_to='projects/')
+    image = models.ManyToManyField('AppImage')
     location = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
 
-    def image_tag(self):
-        return mark_safe('<img src="%s" width="150" height="150">' % self.image.url)
+    # def image_tag(self):
+    #     return mark_safe('<img src="%s" width="150" height="150">' % self.image.url)
 
-    image_tag.short_description = 'Image'
+    # image_tag.short_description = 'Image'
 
     def __str__(self):
         return f'{self.name} - {self.location}'
@@ -83,3 +83,17 @@ class TeamMember(models.Model):
 
     def __str__(self):
         return f'{self.name} - {self.position}'
+
+
+class AppImage(models.Model):
+    imageLocation = 'images/'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.imageLocation = kwargs.get('location')
+
+    alt = models.TextField()
+    image = models.ImageField(upload_to=imageLocation)
+
+    def __str__(self):
+        return f'{self.alt}'
