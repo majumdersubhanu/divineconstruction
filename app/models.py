@@ -100,3 +100,10 @@ class AppImage(models.Model):
 
 class AssociatePartner(models.Model):
     image = models.ImageField(upload_to='associate_partners/')
+
+class Gallery(models.Model):
+    image = models.ImageField(upload_to='gallery/')
+    
+    class Meta:
+        verbose_name = 'Gallery'
+        verbose_name_plural = 'Gallery'

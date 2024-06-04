@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from app.models import AssociatePartner, Project, UpcomingProjects, Testimonial, Quote, Enquiry, TeamMember, AppImage
+from app.models import AssociatePartner, Gallery, Project, UpcomingProjects, Testimonial, Quote, Enquiry, TeamMember, AppImage
 
 
 @admin.register(Project)
@@ -35,3 +35,4 @@ class ProjectAdmin(admin.ModelAdmin):
     ordering = ('name',)
     
 admin.site.register(AssociatePartner)
+admin.site.register(Gallery)
