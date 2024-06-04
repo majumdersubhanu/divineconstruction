@@ -56,7 +56,7 @@ class Testimonial(models.Model):
 
 class Enquiry(models.Model):
     name = models.CharField(max_length=100)
-    email = models.EmailField(unique = False)
+    email = models.EmailField()
     subject = models.CharField(max_length=100)
     message = models.TextField()
 
@@ -67,7 +67,6 @@ class Enquiry(models.Model):
         ordering = ['name']
         verbose_name = 'Enquiry'
         verbose_name_plural = 'Enquiries'
-        unique_together = (('name', 'email'),)
 
 
 class TeamMember(models.Model):
