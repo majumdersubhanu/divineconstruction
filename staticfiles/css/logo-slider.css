@@ -15,7 +15,16 @@
 
 .container .slider .logos .logo-image {
   width: calc(100% / 5);
-  animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+  margin: 0 50px; /* Horizontal space between images */
+  filter: grayscale(100%); /* Dark grey color */
+  transition: filter 0.3s, transform 0.3s;
+  background: transparent;
+  display: inline-block;
+}
+
+.container .slider .logos .logo-image:hover {
+  filter: grayscale(0%); /* Original color on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
 @keyframes slidein {
