@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 
-from .models import UpcomingProjects, Testimonial, Project, Quote, Enquiry, TeamMember
+from .models import AssociatePartner, UpcomingProjects, Testimonial, Project, Quote, Enquiry, TeamMember
 
 
 def index(request):
@@ -24,12 +24,14 @@ def index(request):
     # Initial GET request to load page
     upcoming_projects = UpcomingProjects.objects.all()
     testimonials = Testimonial.objects.all()
+    associates = AssociatePartner.objects.all()
     recent_projects = Project.objects.all().order_by('-name')[:5]
 
     context = {
         'upcoming_projects': upcoming_projects,
         'testimonials': testimonials,
         'recent_projects': recent_projects,
+        'associates': associates,
     }
     return render(request, 'index.html', context)
 

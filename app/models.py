@@ -97,3 +97,6 @@ class AppImage(models.Model):
 
     def __str__(self):
         return f'{self.alt}'
+
+class AssociatePartner(models.Model):
+    image = models.ImageField(upload_to='associate_partners/')

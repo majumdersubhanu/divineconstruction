@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from app.models import Project, UpcomingProjects, Testimonial, Quote, Enquiry, TeamMember, AppImage
+from app.models import AssociatePartner, Project, UpcomingProjects, Testimonial, Quote, Enquiry, TeamMember, AppImage
 
 
 @admin.register(Project)
@@ -33,3 +33,5 @@ class ProjectAdmin(admin.ModelAdmin):
     list_display = ('name', 'position', 'image_tag')
     search_fields = ('name', 'bio')
     ordering = ('name',)
+    
+admin.site.register(AssociatePartner)

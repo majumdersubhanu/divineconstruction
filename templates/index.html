@@ -171,7 +171,7 @@
             <div class="container" data-aos="fade-up">
                 <div class="section-header">
                     <h2>Upcoming Projects</h2>
-                    <p>Take a look at Devine Construction's upcoming projects.</p>
+                    <p>Take a look at Divine Construction's upcoming projects.</p>
                 </div>
 
                 <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
@@ -208,102 +208,37 @@
         <section id="services" class="services section-bg">
             <div class="container" data-aos="fade-up">
                 <div class="section-header">
-                    <h2>Services</h2>
+                    <h2>Associate Partner</h2>
                     <p>
-                        Expert craftsmanship in every build. Discover a service that
-                        brings your projects to life.
+                        Trusted Partners in Building Excellence
                     </p>
                 </div>
 
-                <div class="row gy-4">
-                    <div
-                            class="col-lg-4 col-md-6"
-                            data-aos="fade-up"
-                            data-aos-delay="100"
-                    >
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="fa-solid fa-comments"></i>
-                            </div>
-                            <h3>Consultation</h3>
-                            <p>
-                                Tailored expert advice to navigate your construction projects
-                                with confidence.
-                            </p>
+                <div class="container h-100">
+                    <div class="row align-items-center h-100">
+                      <div class="container rounded">
+                        <div class="slider">
+                          <div class="logos">
+                            {% for associate in associates %}
+                                <img src="{{ associate.image.url }}" class="logo-image" alt="{{ associate.image.url }}">
+                            {% empty %}
+                                <p> No partners found</p>
+                            {% endfor %}
+                          </div>
+                          <div class="logos">
+                            {% for associate in associates %}
+                                <img src="{{ associate.image.url }}" class="logo-image" alt="{{ associate.image.url }}">
+                            {% empty %}
+                                <p> No partners found</p>
+                            {% endfor %}
+                          </div>
                         </div>
+                      </div>
                     </div>
-                    <!-- End Service Item -->
-
-                    <div
-                            class="col-lg-4 col-md-6"
-                            data-aos="fade-up"
-                            data-aos-delay="200"
-                    >
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="fa-solid fa-object-group"></i>
-                            </div>
-                            <h3>Design</h3>
-                            <p>
-                                Innovative and personalized designs that transform your space
-                                into a masterpiece.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- End Service Item -->
-
-                    <div
-                            class="col-lg-4 col-md-6"
-                            data-aos="fade-up"
-                            data-aos-delay="300"
-                    >
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="fa-solid fa-brush"></i>
-                            </div>
-                            <h3>Maintenance</h3>
-                            <p>
-                                Comprehensive upkeep services to ensure your property remains
-                                in pristine condition.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- End Service Item -->
-
-                    <div
-                            class="col-lg-4 col-md-6"
-                            data-aos="fade-up"
-                            data-aos-delay="300"
-                    >
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="fa-solid fa-screwdriver-wrench"></i>
-                            </div>
-                            <h3>Remodeling</h3>
-                            <p>
-                                Reinventing spaces with creativity and efficiency for a modern
-                                lifestyle update.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div
-                            class="col-lg-4 col-md-6"
-                            data-aos="fade-up"
-                            data-aos-delay="300"
-                    >
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="fa-solid fa-building"></i>
-                            </div>
-                            <h3>Renovation</h3>
-                            <p>
-                                Restoring the charm and functionality of your spaces with our
-                                detailed renovation work.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                  </div>
+                  
+                
+            </div>
             </div>
         </section>
         <!-- End Services Section -->
